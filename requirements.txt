@@ -2,3 +2,5 @@ pandas
 sklearn
 numpy
 jupyter
+seaborn
+statsmodels
