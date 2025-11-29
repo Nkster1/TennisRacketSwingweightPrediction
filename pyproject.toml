@@ -1,0 +1,65 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tennisracketswingweightprediction"
+dynamic = ["version"]
+description = ''
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "Niclas Mettenleiter", email = "niclas@mettenleiter.com" },
+]
+classifiers = [
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+  "pandas",
+  "numpy",
+  "matplotlib",
+  "seaborn", 
+  "notebook",
+  "scikit-learn",
+  "statsmodels"
+]
+
+[project.urls]
+Documentation = "https://github.com/Niclas Mettenleiter/tennisracketswingweightprediction#readme"
+Issues = "https://github.com/Niclas Mettenleiter/tennisracketswingweightprediction/issues"
+Source = "https://github.com/Niclas Mettenleiter/tennisracketswingweightprediction"
+
+[tool.hatch.version]
+path = "src/tennisracketswingweightprediction/__about__.py"
+
+[tool.hatch.envs.types]
+extra-dependencies = [
+  "mypy>=1.0.0",
+]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/tennisracketswingweightprediction tests}"
+
+[tool.coverage.run]
+source_pkgs = ["tennisracketswingweightprediction", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/tennisracketswingweightprediction/__about__.py",
+]
+
+[tool.coverage.paths]
+tennisracketswingweightprediction = ["src/tennisracketswingweightprediction", "*/tennisracketswingweightprediction/src/tennisracketswingweightprediction"]
+tests = ["tests", "*/tennisracketswingweightprediction/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
