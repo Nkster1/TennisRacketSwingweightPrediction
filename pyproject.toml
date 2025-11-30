@@ -28,7 +28,9 @@ dependencies = [
   "notebook",
   "scikit-learn",
   "statsmodels",
-  "torch"
+  "xgboost",
+  "torch",
+  "tabulate"
 ]
 
 [project.urls]

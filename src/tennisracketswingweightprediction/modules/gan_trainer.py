@@ -172,6 +172,7 @@ class GANTrainer:
         Returns:
             Correlation structure difference
         """
+
         def get_corr(batch):
             batch_size = batch.size(0)
             mean = torch.mean(batch, dim=0, keepdim=True)
